@@ -9,23 +9,25 @@ celkovy_objem = 0
 for line in lines:
     counter = counter + 1
     values_list = line.split("x")
-    #sorted_values_list = sorted(values_list)   #nevím proč, ale hodnoty mi to neseřadí od nejnižší 
-    sorted(values_list)               #zase řve, že potřebuje jen jeden argument místo 3
-    #min(values_list)                          #mi vyhodí jen nejnižší hodnotu. potřebuju ale poslední dvě hodnoty
-    """sirka = int(sorted_values_list [0])
-    vyska = int(sorted_values_list [1])
-    delka = int(sorted_values_list [2])
+    values_int_list = [] #prázdné pole
+    for value in values_list:
+        value_int = int(value)
+        values_int_list.append(value_int)
+    sorted_values_int_list = sorted(values_int_list)
+    # nebo.....values_int_list.sort()
+
+    sirka = (sorted_values_int_list [0])
+    vyska = (sorted_values_int_list [1])
+    delka = (sorted_values_int_list [2])
     
 
     present = (sirka+sirka+vyska+vyska)
     extra_paper = (sirka*vyska*delka)
     total = present + extra_paper
-    """
+
     
-    #celkovy_objem = celkovy_objem + total
-    """if counter == 5:
+    celkovy_objem = celkovy_objem + total
+"""if counter == 5:
         break"""
      
-#print (f"Celkovy objem je: {celkovy_objem}")
-
-print (values_list)
+print (f"Celkovy objem je: {celkovy_objem}")
